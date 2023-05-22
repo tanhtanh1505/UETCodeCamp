@@ -1,3 +1,5 @@
+# DOM
+
 ## <a href='https://www.w3schools.com/js/js_htmldom.asp'>W3School</a>
 
 ## <a href='https://jsonplaceholder.typicode.com/'>Sample data for testing</a>
@@ -26,3 +28,9 @@ addBtn.addEventListener("click", () => {
 ```
 
 ## <a href='https://www.hackerrank.com/challenges/js10-create-a-button?isFullScreen=true&hr_b=1'> Hackerrank example </a>
+
+# Debug
+
+- <a href='https://developer.chrome.com/docs/devtools/javascript/'>Chrome</a>
+
+- <a href='https://code.visualstudio.com/docs/editor/debugging'>VSCode</a>
