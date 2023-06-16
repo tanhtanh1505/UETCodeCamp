@@ -16,3 +16,47 @@ Run the app in development mode
 ```
 npm run dev
 ```
+
+# Theory
+
+## Request
+
+### url
+
+https://www.canva.com/design/DAFdpmCMuNA
+schema domain path params
+
+https://www.youtube.com/watch?v=CHV3SoFtE1I
+schema domain path query
+
+### method (CRUD)
+
+- GET - read
+- POST - create
+- PUT - update
+- DELETE - delete
+- PATCH - update
+
+### body
+
+- json
+- form-data
+
+### query
+
+## Response
+
+### status code
+
+- 1xx - informational
+- 2xx - success
+- 3xx - redirection
+- 4xx - client error
+- 5xx - server error
+
+### body
+
+- json
+- html
+- text
+- file
