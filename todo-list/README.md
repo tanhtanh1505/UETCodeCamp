@@ -26,16 +26,30 @@ npm run dev
 https://www.canva.com/design/DAFdpmCMuNA
 schema domain path params
 
+schema http/https
+domain ==> IP address
+path const
+params variable
+
 https://www.youtube.com/watch?v=CHV3SoFtE1I
 schema domain path query
 
 ### method (CRUD)
 
 - GET - read
+  query params
+
 - POST - create
-- PUT - update
+  body
+
+- PUT - update (replace)
+  body
+
 - DELETE - delete
-- PATCH - update
+  query params
+
+- PATCH - update (partial)
+  body
 
 ### body
 
@@ -60,3 +74,14 @@ schema domain path query
 - html
 - text
 - file
+
+## Contents
+
+- Routing
+
+- Mongo
+- Exception
+- Error Handling
+- Joi
+
+- Authentication
