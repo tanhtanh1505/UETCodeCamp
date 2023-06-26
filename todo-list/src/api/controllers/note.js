@@ -17,7 +17,7 @@ export const getNote = async (req, res) => {
 };
 
 export const getAllNotes = async (req, res) => {
-  const notes = await Note.find();
+  const notes = await Note.find({ user: req.user });
   return res.status(200).json({ notes });
 };
 
@@ -25,6 +25,7 @@ export const createNote = async (req, res) => {
   const { title, description, status } = req.body;
 
   const newNote = await Note.create({
+    user: req.user,
     title,
     description,
     status,
@@ -67,7 +68,7 @@ export const searchNote = async (req, res) => {
 
   if (!title) throw new HttpException(400, "Title is required");
 
-  const notes = await Note.find({ title: { $regex: title, $options: "i" } });
+  const notes = await Note.find({ title: { $regex: title, $options: "i" }, user: req.user });
 
   return res.status(200).json({ notes });
 };

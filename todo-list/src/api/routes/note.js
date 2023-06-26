@@ -2,22 +2,20 @@ import { Router } from "express";
 import { getAllNotes, getNote, createNote, updateNote, deleteNote, searchNote } from "../controllers/note";
 import catchAsync from "../exceptions/catch-async";
 import { validateCreateNote, validateUpdateNote } from "../middlewares/validate/note";
+import { isAuthor, verifyToken } from "../middlewares/verify-token";
 
 const noteRoute = Router();
 
-// CRUD Create - Read - Update - Delete
-//GET: Lay du lieu, query params
+noteRoute.use(verifyToken);
+
 noteRoute.get("/", catchAsync(getAllNotes));
 noteRoute.get("/search", catchAsync(searchNote));
-noteRoute.get("/:id", catchAsync(getNote));
+noteRoute.get("/:id", isAuthor, catchAsync(getNote));
 
-//POST: Them du lieu, body params
 noteRoute.post("/", validateCreateNote, catchAsync(createNote));
 
-//PUT: Sua du lieu, body params
-noteRoute.put("/:id", validateUpdateNote, catchAsync(updateNote));
+noteRoute.put("/:id", validateUpdateNote, isAuthor, catchAsync(updateNote));
 
-//DELETE: Xoa du lieu, query params
-noteRoute.delete("/:id", catchAsync(deleteNote));
+noteRoute.delete("/:id", isAuthor, catchAsync(deleteNote));
 
 export default noteRoute;
